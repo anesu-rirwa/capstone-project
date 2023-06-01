@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+}
+
+.image {
+    align-self: center;
+    width: 55%;
+}
+
+.details {
+    width: 35%;
+    align-self: center;
+}

@@ -1,7 +1,7 @@
 import { Chart } from "chart.js/auto";
 import React, { useRef, useEffect} from "react";
 
-function Livestock() {
+function PieChart() {
     const canvas = useRef();
 
     useEffect(() => {
@@ -9,8 +9,6 @@ function Livestock() {
 
         let chartStatus = Chart.getChart('myChart');
         
-        console.log(chartStatus)
-
         if (chartStatus != undefined) {
             chartStatus.destroy();
         }
@@ -18,26 +16,18 @@ function Livestock() {
         const chart = new Chart(ctx, {
             type: 'pie',
             data: {
-              labels: ['Lions', 'Monkeys', 'Zebras', 'Eagles', 'Horses'],
+              labels: ['Income', 'Expenses'],
               datasets: [
                 {
-                  label: 'Dataset 1',
-                  data: [12, 19, 3, 2, 3],
+                  label: 'Finance',
+                  data: [50, 50],
                   backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(40, 167, 69, 0.8)',
+                    'rgba(220, 53, 69, 0.8)',
                   ],
                   borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
+                    'rgba(40, 167, 69, 1)',
+                    'rgba(220, 53, 69, 1)',
                   ],
                   borderWidth: 1,
                 },
@@ -51,7 +41,7 @@ function Livestock() {
                 },
                 title: {
                   display: true,
-                  text: 'Number of animals in the zoo',
+                  text: 'Finance Data',
                 },
               },
             },
@@ -66,4 +56,4 @@ function Livestock() {
     );
 }
 
-export default Livestock;
+export default PieChart;

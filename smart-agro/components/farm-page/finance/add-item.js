@@ -31,13 +31,13 @@ function AddNewTransaction() {
                     </div>
 
                     <div className="modal-body">
-                        <select className="form-select mt-3 mb-4">
+                        <select className="form-select mt-3 mb-4 w-25">
                             <option selected value="expense">Expense</option>
                             <option value="income">Income</option>
                         </select>
 
-                        <div className="form-floating m-4">
-                            <input type='text' className="form-control text-end" id="floatingInput" placeholder="Enter amount $"/>
+                        <div className="form-floating m-4 w-50 d-flex">
+                            <input type='text' className="form-control text-end align-self-center" id="floatingInput" placeholder="Enter amount $"/>
 
                             <label for="floatingInput">Enter amount ($)</label>
                         </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React, {useState} from 'react';
 
 import HomeIcon from '@mui/icons-material/Home';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
@@ -13,11 +14,7 @@ import Inventory from "@/components/farm-page/inventory";
 import Finance from "@/components/farm-page/finance/finance";
 
 function FarmHome() {
-    let view = "finance";
-
-    const renderView = (option) => {
-        view = option;
-    }
+    const [view, setView] = useState("")
 
     const farmContent = () => {
         if (view === "crops") {
@@ -47,31 +44,31 @@ function FarmHome() {
                         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                             
                             <li className="nav-item">
-                                <button onClick={() => renderView("dashboard")} className="nav-link align-middle px-0">
+                                <button onClick={() => setView("dashboard")} className="nav-link align-middle px-0">
                                     <HomeIcon className="text-white"/>    
                                     <span className="ms-1 d-none d-sm-inline text-white">Home</span>
                                 </button>
                             </li>
                             
                             <li>
-                                <button onClick={() => renderView("crops")} className="nav-link px-0 align-middle">
+                                <button onClick={() => setView("crops")} className="nav-link px-0 align-middle">
                                     <GrassSharpIcon className="text-success"/>
                                     <span className="ms-1 d-none d-sm-inline text-white">Crops</span></button>
                             </li>
 
                             <li>
-                                <button href="#" className="nav-link px-0 align-middle">
+                                <button onClick={() => setView("livestock")} className="nav-link px-0 align-middle">
                                     <i className="fs-4 bi-table text-success"></i> <span className="ms-1 d-none d-sm-inline text-white">Livestock</span></button>
                             </li>
 
                             <li>
-                                <button href="#" className="nav-link px-0 align-middle">
+                                <button onClick={() => setView("inventory")} className="nav-link px-0 align-middle">
                                     <Inventory2SharpIcon className="text-warning"/>
                                     <span className="ms-1 d-none d-sm-inline text-white">Inventory</span></button>
                             </li>                            
 
                             <li>
-                                <button href="#" className="nav-link px-0 align-middle">
+                                <button onClick={() => setView("finance")} className="nav-link px-0 align-middle">
                                     <AccountBalanceWalletIcon className="text-primary" />
                                     <span className="ms-1 d-none d-sm-inline text-white">Finances</span></button>
                             </li>

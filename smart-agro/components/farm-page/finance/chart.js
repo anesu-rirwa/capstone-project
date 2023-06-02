@@ -4,7 +4,7 @@ import React, { useRef, useEffect} from "react";
 function PieChart() {
     const canvas = useRef();
 
-    useEffect(() => {
+    /*useEffect(() => {
         const ctx = canvas.current;
 
         let chartStatus = Chart.getChart('myChart');
@@ -47,7 +47,7 @@ function PieChart() {
             },
           });
 
-    }, [])
+    }, [])*/
 
     return (
         <div className="container">
